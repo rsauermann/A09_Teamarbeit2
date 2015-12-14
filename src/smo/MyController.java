@@ -22,7 +22,7 @@ public class MyController implements ActionListener {
 	public MyController() {
 		model = new MyModel();
 		gui = new MyPanel(model, this);
-		mf = new MyFrame(gui, "Lotto");
+		mf = new MyFrame(gui, "Lights off");
 	}
 
 	@Override
@@ -32,6 +32,7 @@ public class MyController implements ActionListener {
 	 */
 	public void actionPerformed(ActionEvent e) {
 		model.buttonPushed(e.getActionCommand());
+		gui.repaint();
 	}
 
 	/**
