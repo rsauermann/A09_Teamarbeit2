@@ -1,6 +1,7 @@
 package smo;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.util.Date;
 
@@ -14,7 +15,7 @@ import javax.swing.*;
  * @version 14.12.2015
  *
  */
-public class MyPanel extends JFrame {
+public class MyPanel extends JPanel {
 	private JPanel all;//gesamt Panel
 	private JPanel north;//panel für den neuen game Button
 	private JPanel buttonsP;//hier kommen die 25 Buttons rein
@@ -26,10 +27,6 @@ public class MyPanel extends JFrame {
 	private JButton newGame;//Generiert das Spielfeld neu
 	
 	public MyPanel(MyModel mm,MyController mc){
-		this.setTitle("A09_Teamarbeit");
-		this.setLocationRelativeTo(null);
-		this.setSize(500, 500);
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		model = mm;
 		controller = mc;
@@ -42,13 +39,16 @@ public class MyPanel extends JFrame {
 		north.add(newGame);
 		
 		buttonArray = new JButton[5][5];
+		buttonsP = new JPanel();
 		buttonsP.setLayout(new GridLayout(5 , 5));
+		buttonsP.setPreferredSize(new Dimension(300,150));
 		this.add(buttonsP, BorderLayout.CENTER);
-		for(int x = 0 ; x < 4 ; x++){
-			for(int y = 0; y < 4;y++){
+		for(int x = 0 ; x < 5 ; x++){
+			for(int y = 0; y < 5;y++){
 				buttonArray[x][y]=new MyButton();
-				buttonArray[x][y].setActionCommand(x+","+y);
+				buttonArray[x][y].setActionCommand(x+"#"+y);
 				buttonArray[x][y].addActionListener(controller);
+				buttonsP.add(buttonArray[x][y]);
 			}
 		}
 		
