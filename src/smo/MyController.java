@@ -4,6 +4,8 @@ import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JOptionPane;
+
 /**
  * Ist die Controller Klasser des GUI , sie beinhaltet den ActionListener und
  * die main Methode
@@ -33,8 +35,7 @@ public class MyController implements ActionListener {
 	 */
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand() == "new") {
-			gui = new MyPanel(model,this);
-			System.out.println("bin drin");
+			gui.newG();
 			return;
 		} else {
 			Point[] ps1 = model.buttonPushed(e.getActionCommand());
@@ -45,8 +46,11 @@ public class MyController implements ActionListener {
 				}
 				gui.changeColor((int) ps1[i].x, (int) ps1[i].y);
 			}
-			
-			gui.repaint();
+			if(model.hatGewonnen(gui.getButtonArray())){
+				System.out.println("bin da");
+				JOptionPane.showMessageDialog(null, "Sie haben gewonnen! :)");
+				gui.newG();
+			}
 		}
 	}
 

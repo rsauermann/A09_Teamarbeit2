@@ -19,6 +19,10 @@ public class MyButton extends JButton {
 		this.setBackground(Color.BLACK);
 	}
 
+	public boolean isOn() {
+		return isOn;
+	}
+
 	public void changeColor() {
 		isOn = !isOn;
 		if (isOn) {
@@ -26,7 +30,10 @@ public class MyButton extends JButton {
 		} else {
 			this.setBackground(Color.BLACK);
 		}
-
+	}
+	public void changeOff(){
+		isOn=false;
+		this.setBackground(Color.BLACK);
 	}
 
 }

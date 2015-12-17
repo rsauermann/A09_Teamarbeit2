@@ -3,6 +3,7 @@ package smo;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.Point;
 import java.util.Date;
 
 import javax.swing.*;
@@ -84,9 +85,17 @@ public class MyPanel extends JPanel {
 			}
 		}
 		newGame.setActionCommand("new");
-		this.setVisible(true);
+		newG();
 	}
-	public void repaint(){
+	public void newG(){
+		for(int x = 0 ; x < 5 ; x++){
+			for(int y = 0; y < 5;y++){
+				buttonArray[x][y].changeOff();
+			}
 		}
+		Point[]ps=model.addLight();
+		for(int i=0;i<ps.length;i++)
+			changeColor(ps[i].x, ps[i].y);
+	}
 }
 
