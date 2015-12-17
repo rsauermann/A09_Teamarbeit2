@@ -22,12 +22,15 @@ public class MyPanel extends JPanel {
 	private MyModel model;
 	private MyController controller;
 	
-	private JButton [][]buttonArray;
+	private MyButton [][]buttonArray;
 	
 	private JButton newGame;//Generiert das Spielfeld neu
 	
 	public JButton getNewGame() {
 		return newGame;
+	}
+	public void changeColor(int x , int y){
+		buttonArray[x][y].changeColor();
 	}
 
 	public MyPanel(MyModel model,MyController controller){
@@ -40,7 +43,7 @@ public class MyPanel extends JPanel {
 		all.setLayout(new BorderLayout());
 		this.add(newGame, BorderLayout.NORTH);//hier wird der newGame Button zu .NORTH hinzugefügt
 		
-		buttonArray = new JButton[5][5];
+		buttonArray = new MyButton[5][5];
 		buttonsP = new JPanel();
 		buttonsP.setLayout(new GridLayout(5 , 5));
 		buttonsP.setPreferredSize(new Dimension(450,450));
