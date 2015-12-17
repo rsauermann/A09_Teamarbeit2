@@ -9,52 +9,38 @@ import javax.swing.*;
  * Ist die Panel Klasse des GUI , sie beinhaltet alle JPanel und Inhalte (zB.
  * JButtons,JTextFields,..)
  * 
- * @author Raphael Sauermann
- * @version 27.11.2015
+ * @author Özer Angelo
+ * @version 14.12.2015
  *
  */
-public class MyPanel extends JPanel {
-
-	private MyModel Model;
-	private MyController myController;
-
-	// die Panels die in das Finale kommen
-	JPanel buttonPanel;
-	// Der Inhalt des Panels
-
-	// Die Buttons
-
-	// Die JLabel
-
-	// Eingabe für die cm von Schnee
-	private JTextField schneeLage = new JTextField(5);
-
-	/**
-	 * Der Konstruktor beinhaltet die deklaration des JPanels und dem gesamten
-	 * Inhalt
-	 * 
-	 * @param bildModel
-	 * @param myController
-	 */
-	public MyPanel(MyModel Model, MyController myController) {
-		// initialisiert die inhalte
-		buttonPanel = new JPanel();
-
-		// setzt das Layout
-		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-
-		// fügt die inneren Layouts hinzu
-
-		// setzt das Layout von den inneren Panels
-
-		// fügt den Inhalt den inneren Panels hinzu
-
-		// fügt den inhalt den ganz inneren panels hinzu
-
-		// fügt den inhalt zu den dropdownlisten hinzu
-
-		// setzt die actioncommands und listener
-
+public class MyPanel extends JFrame {
+	private JPanel all;//gesamt Panel
+	private JPanel north;//panel für den neuen game Button
+	private JPanel buttons;//hier kommen die 25 Buttons rein
+	
+	private JButton []buttonArray;
+	
+	private JButton newGame;//Generiert das Spielfeld neu
+	
+	public MyPanel(){
+		this.setTitle("A07: Wenn wieder einmal Schnee fällt...");
+		this.setLocationRelativeTo(null);
+		this.setSize(500, 300);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		all = new JPanel();
+		north = new JPanel();
+		newGame = new JButton("New Game");
+		all.setLayout(new BorderLayout());
+		this.add(north, BorderLayout.NORTH);//hier wird das north Panel .NORTH hinzugefügt
+		north.add(newGame);
+		
+		buttonArray = new JButton[25];
+		this.setVisible(true);
 	}
 
+	public void repaint(){
+		
+	}
 }
+
