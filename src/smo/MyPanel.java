@@ -25,14 +25,14 @@ public class MyPanel extends JFrame {
 	
 	private JButton newGame;//Generiert das Spielfeld neu
 	
-	public MyPanel(){
+	public MyPanel(MyModel mm,MyController mc){
 		this.setTitle("A09_Teamarbeit");
 		this.setLocationRelativeTo(null);
 		this.setSize(500, 500);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
-		model = new MyModel();
-		controller = new MyController();
+		model = mm;
+		controller = mc;
 		
 		all = new JPanel();
 		north = new JPanel();
