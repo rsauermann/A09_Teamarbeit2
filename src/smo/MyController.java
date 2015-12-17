@@ -32,7 +32,7 @@ public class MyController implements ActionListener {
 	 * wenn ein button gedrückt wird , wird die gefragte methode entweder in "model" und "gui" aufgerufen
 	 */
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == gui.getNewGame()) {
+		if (e.getActionCommand() == "new") {
 			gui = new MyPanel(model,this);
 			System.out.println("bin drin");
 			return;

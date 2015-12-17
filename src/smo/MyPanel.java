@@ -66,6 +66,7 @@ public class MyPanel extends JPanel {
 		
 		all = new JPanel();
 		newGame = new JButton("New Game");
+		newGame.addActionListener(controller);
 		all.setLayout(new BorderLayout());
 		this.add(newGame, BorderLayout.NORTH);//hier wird der newGame Button zu .NORTH hinzugefügt
 		
@@ -82,6 +83,7 @@ public class MyPanel extends JPanel {
 				buttonsP.add(buttonArray[x][y]);
 			}
 		}
+		newGame.setActionCommand("new");
 		this.setVisible(true);
 	}
 	public void repaint(){
