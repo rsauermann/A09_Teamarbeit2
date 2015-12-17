@@ -41,7 +41,7 @@ public class MyPanel extends JPanel {
 		buttonArray = new JButton[5][5];
 		buttonsP = new JPanel();
 		buttonsP.setLayout(new GridLayout(5 , 5));
-		buttonsP.setPreferredSize(new Dimension(300,150));
+		buttonsP.setPreferredSize(new Dimension(270,270));
 		this.add(buttonsP, BorderLayout.CENTER);
 		for(int x = 0 ; x < 5 ; x++){
 			for(int y = 0; y < 5;y++){
