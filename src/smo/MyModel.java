@@ -1,10 +1,10 @@
 package smo;
 
 public class MyModel {
-	private boolean[][] buttonStatus;
+	//private boolean[][] buttonStatus;
 
 	public MyModel() {
-		buttonStatus = new boolean[5][5];
+		//buttonStatus = new boolean[5][5];
 		double random = (Math.random()*3)+4;
 		int randomInt= (int)random;
 		for (int i=0;i<randomInt;i++){
