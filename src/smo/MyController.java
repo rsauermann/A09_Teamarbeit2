@@ -35,7 +35,7 @@ public class MyController implements ActionListener {
 			model = new MyModel();
 			return;
 		} else {
-			model.buttonPushed(e.getActionCommand());
+			int [] int1=model.buttonPushed(e.getActionCommand());
 			gui.repaint();
 		}
 	}
