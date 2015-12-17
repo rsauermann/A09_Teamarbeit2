@@ -25,11 +25,11 @@ public class MyModel {
 		String[] cordsSplit = cords.split("#");
 		int x = Integer.parseInt(cordsSplit[0]);
 		int y = Integer.parseInt(cordsSplit[1]);
-		int zl=0;
-		for(int i=0;i<5;i++){
-			 
-		}
-			
-		return null;
+		ps1[0]=new Point(x,y);
+		ps1[1]=new Point(x+1,y);
+		ps1[2]=new Point(x-1,y);
+		ps1[3]=new Point(x,y+1);
+		ps1[4]=new Point(x,y-1);
+		return ps1;
 	}
 }

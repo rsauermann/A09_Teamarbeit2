@@ -1,5 +1,6 @@
 package smo;
 
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -35,7 +36,15 @@ public class MyController implements ActionListener {
 			model = new MyModel();
 			return;
 		} else {
-			int [] int1=model.buttonPushed(e.getActionCommand());
+			Point[] ps1 = model.buttonPushed(e.getActionCommand());
+			for (int i = 0; i < 5; i++) {
+				if ((int) ps1[i].x == -1 || (int) ps1[i].x == 5
+						|| (int) ps1[i].y == -1 || (int) ps1[i].y == 5) {
+					continue;
+				}
+				gui.changeColor((int) ps1[i].x, (int) ps1[i].y);
+			}
+			
 			gui.repaint();
 		}
 	}
