@@ -24,9 +24,21 @@ public class MyPanel extends JPanel {
 	
 	private MyButton [][]buttonArray;
 	
+	public MyButton[][] getButtonArray() {
+		return buttonArray;
+	}
+	/**
+	 * Eine simple Getter-Methode
+	 * @since 17.12.2015
+	 * @return den Inhalt des Arrays
+	 */
+	public void setButtonArray(MyButton[][] buttonArray) {
+		this.buttonArray = buttonArray;
+	}
 	private JButton newGame;//Generiert das Spielfeld neu
 	/**
 	 * Eine simple Getter-Methode
+	 * @since 17.12.2015
 	 * @return den Button newGame
 	 */
 	public JButton getNewGame() {
@@ -34,6 +46,7 @@ public class MyPanel extends JPanel {
 	}
 	/**
 	 * Ermittelt die Postion der Buttons um die Farbe zu ändern
+	 * @since 17.12.2015
 	 * @param x - Koordinate des Buttons
 	 * @param y - Koordinate des Buttons
 	 */
@@ -42,6 +55,7 @@ public class MyPanel extends JPanel {
 	}
 	/**
 	 * Das ist der Konstruktor der Klasse MyPanel 
+	 * @since 17.12.2015
 	 * @param model ein Objekt der Klasse MyModel
 	 * @param controller ein Objekt der Klasse MyController
 	 */
