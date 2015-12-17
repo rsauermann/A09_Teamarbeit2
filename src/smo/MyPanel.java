@@ -26,22 +26,24 @@ public class MyPanel extends JPanel {
 	
 	private JButton newGame;//Generiert das Spielfeld neu
 	
-	public MyPanel(MyModel mm,MyController mc){
+	public JButton getNewGame() {
+		return newGame;
+	}
+
+	public MyPanel(MyModel model,MyController controller){
 		
-		model = mm;
-		controller = mc;
+		this.model=model;
+		this.controller=controller;
 		
 		all = new JPanel();
-		north = new JPanel();
 		newGame = new JButton("New Game");
 		all.setLayout(new BorderLayout());
-		this.add(north, BorderLayout.NORTH);//hier wird das north Panel .NORTH hinzugefügt
-		north.add(newGame);
+		this.add(newGame, BorderLayout.NORTH);//hier wird der newGame Button zu .NORTH hinzugefügt
 		
 		buttonArray = new JButton[5][5];
 		buttonsP = new JPanel();
 		buttonsP.setLayout(new GridLayout(5 , 5));
-		buttonsP.setPreferredSize(new Dimension(270,270));
+		buttonsP.setPreferredSize(new Dimension(450,450));
 		this.add(buttonsP, BorderLayout.CENTER);
 		for(int x = 0 ; x < 5 ; x++){
 			for(int y = 0; y < 5;y++){
