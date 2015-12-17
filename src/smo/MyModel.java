@@ -2,15 +2,18 @@ package smo;
 
 import java.awt.Point;
 import java.util.Arrays;
-
+/**
+ * Diese Klasse dient als Model sie beinhaltet die berechnung ob ein spieler gewonnen hat alsauch die zufällige setztung der lichtquellen
+ * @author Raphael Sauermann
+ * @version 17.12.2015
+ *
+ */
 public class MyModel {
-	// private boolean[][] buttonStatus;
-
-	public MyModel() {
-	}
-
+	/**
+	 * Diese Methode dient zur erstellung von zufälligen lichtpunkten 
+	 * @return die Punkte wo licht sein soll
+	 */
 	public Point[] addLight() {
-
 		double random = (Math.random() * 4) + 5;
 		int randomInt = (int) random;
 		Point[] ps1 = new Point[randomInt];
@@ -26,7 +29,11 @@ public class MyModel {
 		}
 		return ps1;
 	}
-
+	/**
+	 * diese methode dient zur berechnung der punkte die die farbe ändern müssen wenn ein button gedrückt wurde
+	 * @param cords die position des buttons im array
+	 * @return die punkte die die farbe ändern müssen
+	 */
 	public Point[] buttonPushed(String cords) {
 		Point[] ps1 = new Point[5];
 		int[][] ret = new int[5][2];
@@ -40,7 +47,11 @@ public class MyModel {
 		ps1[4] = new Point(x, y - 1);
 		return ps1;
 	}
-
+	/**
+	 * diese methode schaut ob der spieler gewonnen hat(wenn alle felder off sind)
+	 * @param mb das array mit allen buttons
+	 * @return true wenn gewonnen, false wenn nicht gewonnen
+	 */
 	public boolean hatGewonnen(MyButton[][] mb) {
 		for (int i = 0; i < 5; i++) {
 			for (int j = 0; j < 5; j++) {
