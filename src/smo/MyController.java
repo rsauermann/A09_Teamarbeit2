@@ -31,8 +31,13 @@ public class MyController implements ActionListener {
 	 * wenn ein button gedrückt wird , wird die gefragte methode entweder in "model" und "gui" aufgerufen
 	 */
 	public void actionPerformed(ActionEvent e) {
-		model.buttonPushed(e.getActionCommand());
-		gui.repaint();
+		if (e.getSource() == gui.getNewGame()) {
+			model = new MyModel();
+			return;
+		} else {
+			model.buttonPushed(e.getActionCommand());
+			gui.repaint();
+		}
 	}
 
 	/**
