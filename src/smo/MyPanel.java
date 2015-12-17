@@ -87,6 +87,10 @@ public class MyPanel extends JPanel {
 		newGame.setActionCommand("new");
 		newG();
 	}
+	/**
+	 * Die Methode newG startet das Spiel neu indem das Feld neu generiert wird
+	 *  @since 17.12.2015
+	 */
 	public void newG(){
 		for(int x = 0 ; x < 5 ; x++){
 			for(int y = 0; y < 5;y++){
