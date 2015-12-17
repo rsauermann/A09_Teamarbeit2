@@ -15,4 +15,8 @@ public class MyButton extends JButton {
 		isOn=false;
 		this.setBackground(Color.BLACK);
 	}
+	public changeColor(){
+		isOn=!isOn;
+	}
+	
 }
