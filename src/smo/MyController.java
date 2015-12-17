@@ -33,7 +33,8 @@ public class MyController implements ActionListener {
 	 */
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == gui.getNewGame()) {
-			model = new MyModel();
+			gui = new MyPanel(model,this);
+			System.out.println("bin drin");
 			return;
 		} else {
 			Point[] ps1 = model.buttonPushed(e.getActionCommand());

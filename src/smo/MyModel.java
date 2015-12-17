@@ -32,4 +32,12 @@ public class MyModel {
 		ps1[4]=new Point(x,y-1);
 		return ps1;
 	}
+	public boolean hatGewonnen(int[][]mb){
+		for (int i=0;i<5;i++){
+			for (int j=0;j<5;j++){
+				
+			}
+		}
+		return false;
+	}
 }
